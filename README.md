@@ -10,7 +10,7 @@
 
 # TinyDBMS
 
-## ___'You Definately Need Efficient Record Keeper'___
+## ___'You Definitely Need Efficient Record Keeper'___
 -------------
 
 **Table of Contents**
