@@ -6,13 +6,11 @@
 	3. Installation: make
 	4. Run:
     $ make run
-    or
-    $ make run FILE1=pathToFile1 FILE2=pathToFile2
 -->
 
-# MatMul
+# TinyDBMS
 
-## ___'Bigger Matrices! Not a problem'___
+## ___'You Definately Need Efficient Record Keeper'___
 -------------
 
 **Table of Contents**
@@ -23,23 +21,25 @@
 
 ## Features
 -------------
-Matrix Multiplier with following features
-> Multithreading Supported
-> Multiple Output Choice
-> Error Handling
-> Efficient
+TinyDBMS with following features
+> Search by ID in O(1)
+> Search by Title in O(lgn)
+> Add Record Feature
+> Update Existing Record Feature
+> Delete Exisiting Record Feature
+> Interactive UI
 
 
 
 ## Tech
 -------------
-MatMul is completely written in C Language.
-It can efficiently multiply two matrices using threads.
+TinyDBMS is completely written in C++ Language.
+It can efficiently search for a Record stored in file and it have Record adding, updating and deletion feature.
 
 ## Installation
 -------------
 
-MatMul requires [GCC](https://www.gnu.org/software/gcc/), [GDB](https://www.gnu.org/software/gdb/) and [make](https://www.gnu.org/software/make/) to run.
+TinyDBMS requires [G++](https://gcc.gnu.org/), [GDB](https://www.gnu.org/software/gdb/) and [make](https://www.gnu.org/software/make/) to run.
 
 Install all dependencies before installation
 
@@ -51,10 +51,10 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install make -y
 sudo apt install gdb -y
-sudo apt install gcc -y
+sudo apt install g++ -y
 ```
 
-##### MatMul Installation
+##### TinyDBMS Installation
 1. extract the zip
 2. open the terminal in the extracted folder
 3. run the following command on terminal
@@ -71,11 +71,11 @@ Enter following commands on terminal
 
 ##### One Way
  ```sh
-make run FILE1=pathToFile1 FILE2=pathToFile2
+make run
 ```
 ##### Another Way
  ```sh
-./bin/main pathToFile1 pathToFile1file2
+./bin/main
 ```
 
 ## Additional Command

@@ -10,7 +10,7 @@ BIN	:= bin
 SRC	:= src
 INCLUDE	:= include
 
-LIBRARIES   := -lm -pthread
+LIBRARIES   :=
 EXECUTABLE	:= main
 
 all: $(BIN)/$(EXECUTABLE)
