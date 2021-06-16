@@ -1,0 +1,29 @@
+#ifndef CDATE
+#define CDATE
+
+#include <iostream>
+#include <unistd.h>
+using namespace std;
+
+class Date
+{
+private:
+    unsigned int month;
+    unsigned int day;
+    unsigned int year;
+
+public:
+    Date();
+    Date(unsigned int, unsigned int, unsigned int); //Constructor
+    void setDate(unsigned int, unsigned int, unsigned int);
+    void setDay(unsigned int);
+    void setMonth(unsigned int);
+    void setYear(unsigned int);
+    unsigned int getDay();
+    unsigned int getMonth();
+    unsigned int getYear();
+    void showDate();
+    ~Date() = default; //Destructor
+};
+
+#endif

@@ -1,0 +1,46 @@
+#ifndef CTINYDBMS
+#define CTINYDBMS
+
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <algorithm>
+#include <vector>
+#include "cbook"
+
+struct Index;
+
+#define FILENAME "bookdb.bin"
+#define INDEX_FILENAME "index.bin"
+#define DATA_LENGTH (500000) //File can store 500000 records
+#define FILESIZE (DATA_LENGTH * sizeof(Book))
+// #define INDEX_FILESIZE (DATA_LENGTH * sizeof(Index))
+
+typedef int FD;
+
+Book *createMap();
+Index *createIndex(Book *);
+void updateIndex(Book*, Index*&);
+void clear();
+void intro();
+void menu();
+void submenu();
+int readOption();
+void readBookInfo(Book &);
+void addRecord(const Book &, Book *, Index*&);
+void deleteRecord(unsigned int, Book *, Index*&);
+int binaryTitleIndexSearch(Index*, int, int, const char[MAX_TITLE_LENGTH]);
+void searchByID(unsigned int, Book *);
+void searchByTitle(char[MAX_TITLE_LENGTH], Index *, Book*);
+void readID(unsigned int &);
+void readTitle(char [MAX_TITLE_LENGTH]);
+void readAuthorsCount(unsigned int &);
+unsigned int readAuthors(char[MAX_AUTHORS][MAX_NAME_LENGTH]);
+void readDOP(Date &);
+void readPublisher(char [MAX_NAME_LENGTH]);
+void invalidSelection();
+void unMapBookFile(Book *);
+void exitingMessage();
+
+#endif

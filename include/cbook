@@ -1,0 +1,42 @@
+#ifndef CBOOK
+#define CBOOK
+
+#include <cstring>
+#include "cdate"
+
+#define MAX_AUTHORS 5
+#define MAX_TITLE_LENGTH 500
+#define MAX_NAME_LENGTH 50
+
+class Book
+{
+private:
+    unsigned int book_id;
+    char title[MAX_TITLE_LENGTH];
+    unsigned int authorsCount;
+    char authors[MAX_AUTHORS][MAX_NAME_LENGTH];
+    Date date_of_publication;
+    char publisher[MAX_NAME_LENGTH];
+
+public:
+    Book();
+    Book(unsigned int, const char[MAX_TITLE_LENGTH], unsigned int, const char[MAX_AUTHORS][MAX_NAME_LENGTH], Date, const char[MAX_NAME_LENGTH]);
+    Book(const Book &);
+
+    unsigned int getBookID() const;
+    const char *getBookTitle() const;
+
+    void setBookID(unsigned int);
+    void setBookTitle(const char[MAX_TITLE_LENGTH]);
+    void setBookAuthors(const char[MAX_AUTHORS][MAX_NAME_LENGTH], unsigned int);
+    void setBookDOP(Date);
+    void setBookPublisher(const char[MAX_NAME_LENGTH]);
+
+    void printBookRecord();
+
+    Book &operator=(const Book &);
+
+    ~Book() = default;
+};
+
+#endif
